@@ -1,5 +1,31 @@
 <?php
-function Currency2Txt ($s, $decimalseparator, $thousandsseparator, $spacelevel) {
+
+
+/**
+ * Funkcija koja konvertuje broj u tekstualni zapis
+ *
+ * @example example.php Counting in action.
+ * @param string $s Broj koji se konvertuje u tekstualni oblik
+ * @param string $decimalseparator Separator decimala
+ * @param string $thousandsseparator Separator za hiljade, ako ne postoji staviti prazan string
+ * @param integer $spacelevel Broj u opsegu od 0-6 koji određuje gde se postavljaju space karakteri. Svaki sledeći nivo obuhvata i ceo prethodni.
+ *
+ * 0 - Nigde se ne postavljaju npr: minusjedanmilionpetstošezdesetšesthiljadatristatridesettridinarai00/100
+ *
+ * 1 - Postavljaju se u delu "i xx/100 npr: minusjedanmilionpetstošezdesetšesthiljadatristatridesettridinara i 00/100
+ *
+ * 2 - Postavljaju se ispred reči dinara npr: minusjedanmilionpetstošezdesetšesthiljadatristatridesettri dinara i 00/100
+ *
+ * 3 - Postavljaju se ispred predznaka minus npr: minus jedanmilionpetstošezdesetšesthiljadatristatridesettri dinara i 00/100
+ *
+ * 4 - Postavlja se na mesto gde bi bio postavljem separator hiljada npr: minus jedanmilion petstošezdesetšesthiljada tristatridesettri dinara i 00/100
+ *
+ * 5 - Postavlja se ispred reči hiljada, miliona, milijardi npr: minus jedan milion petstošezdesetšest hiljada tristatridesettri dinara i 00/100
+ *
+ * 6 - Postavlja se između svake reči npr: minus jedan milion petsto šezdeset šest hiljada trista trideset tri dinara i 00/100
+ * @return string
+ */
+function Currency2Txt($s, $decimalseparator='.', $thousandsseparator='', $spacelevel=1) {
     $jedinice = [
         [
             '',         'jedna',     'dve',        'tri',       'četiri',
@@ -108,4 +134,6 @@ function Currency2Txt ($s, $decimalseparator, $thousandsseparator, $spacelevel) 
     }
     return trim($result);
 }
+
+
 ?>

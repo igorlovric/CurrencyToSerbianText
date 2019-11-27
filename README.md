@@ -24,7 +24,7 @@ echo Currency2Txt('-123,456.78', '.', ',', 3);
 Objašnjenje parametara funkcije: 
 
 * $s - Broj koji se konvertuje (može da ima - predznak)
-* $decimalseparator - Separator decimale
+* $decimalseparator - Separator decimala
 * $thousandseparator - Separator za hiljade, ako ne postoji staviti prazan string
 * $spacelevel - Broj u opsegu od 0-6 koji određuje gde se postavljaju space karakteri. Svaki sledeći nivo obuhvata i ceo prethodni.
     * 0 - Nigde se ne postavljaju
